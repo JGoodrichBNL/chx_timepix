@@ -1,0 +1,26 @@
+[workspace]
+authors = ["Justin Goodrich"]
+channels = ["conda-forge"]
+name = "chx_timepix"
+platforms = ["linux-64", "osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+start = "jupyter lab"
+
+[dependencies]
+awkward = "*"
+dask = "*"
+databroker = "*"
+distributed = "*"
+h5py = "*"
+jupyterlab = "*"
+matplotlib = "*"
+numba = "*"
+numpy = "*"
+pandas = "*"
+scikit-beam = "*"
+scipy = "*"
+sparse = "*"
+tiled = "*"
+tqdm = "*"
