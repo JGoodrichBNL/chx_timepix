@@ -339,6 +339,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/pyparsing-3.2.3-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pyside6-6.9.1-py312hdb827e4_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pysocks-1.7.1-pyha55dd90_7.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/pytables-3.10.2-py312h4f06452_4.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python-3.12.11-h9e4cc4f_0_cpython.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python-blosc2-3.3.4-py312ha25dc49_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-dateutil-2.9.0.post0-pyhff2d567_1.conda
@@ -758,6 +759,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyobjc-framework-cocoa-11.0-py312hb9d441b_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pyparsing-3.2.3-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pysocks-1.7.1-pyha55dd90_7.conda
+      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pytables-3.10.2-py312h1558ca1_4.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/python-3.12.11-hc22306f_0_cpython.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/python-blosc2-3.3.4-py312hb1c47e0_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-dateutil-2.9.0.post0-pyhff2d567_1.conda
@@ -7042,6 +7044,54 @@ packages:
   license_family: BSD
   size: 21085
   timestamp: 1733217331982
+- conda: https://conda.anaconda.org/conda-forge/linux-64/pytables-3.10.2-py312h4f06452_4.conda
+  sha256: 67bb3f2cbbf814fec3186d3e1ce1ed18a07a3e4b2b4670835747eb3d17cd3e22
+  md5: 55e3aca09406397dce79133140f6104c
+  depends:
+  - __glibc >=2.17,<3.0.a0
+  - blosc >=1.21.6,<2.0a0
+  - bzip2 >=1.0.8,<2.0a0
+  - c-blosc2 >=2.17.1,<2.18.0a0
+  - hdf5 >=1.14.6,<1.14.7.0a0
+  - libgcc >=13
+  - libstdcxx >=13
+  - libzlib >=1.3.1,<2.0a0
+  - numexpr
+  - numpy >=1.19,<3
+  - numpy >=1.20.0
+  - packaging
+  - py-cpuinfo
+  - python >=3.12,<3.13.0a0
+  - python_abi 3.12.* *_cp312
+  - typing-extensions >=4.4.0
+  license: BSD-3-Clause
+  license_family: BSD
+  size: 1657511
+  timestamp: 1747376202447
+- conda: https://conda.anaconda.org/conda-forge/osx-arm64/pytables-3.10.2-py312h1558ca1_4.conda
+  sha256: 8e72f9ba94827bd186528584eed2cec19e56bb0d64fa1e01442625313d25aa12
+  md5: 32317f24e7c9371c54e9d9a2fa42133b
+  depends:
+  - __osx >=11.0
+  - blosc >=1.21.6,<2.0a0
+  - bzip2 >=1.0.8,<2.0a0
+  - c-blosc2 >=2.17.1,<2.18.0a0
+  - hdf5 >=1.14.6,<1.14.7.0a0
+  - libcxx >=18
+  - libzlib >=1.3.1,<2.0a0
+  - numexpr
+  - numpy >=1.19,<3
+  - numpy >=1.20.0
+  - packaging
+  - py-cpuinfo
+  - python >=3.12,<3.13.0a0
+  - python >=3.12,<3.13.0a0 *_cpython
+  - python_abi 3.12.* *_cp312
+  - typing-extensions >=4.4.0
+  license: BSD-3-Clause
+  license_family: BSD
+  size: 1730168
+  timestamp: 1747376480453
 - conda: https://conda.anaconda.org/conda-forge/linux-64/python-3.12.11-h9e4cc4f_0_cpython.conda
   sha256: 6cca004806ceceea9585d4d655059e951152fc774a471593d4f5138e6a54c81d
   md5: 94206474a5608243a10c92cefbe0908f
