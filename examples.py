@@ -22,8 +22,8 @@ a = ak.Array([
 a.nbytes
 df.values.nbytes
 
-# count events per centroid
-n = ak.count(a['t'], axis=1)
+# number of events per centroid
+n = ak.num(a['t'], axis=1)
 # centroids
 xc = ak.sum(a['x'] * a['ToT'], axis=1) / ak.sum(a['ToT'], 1)
 yc = ak.sum(a['y'] * a['ToT'], axis=1) / ak.sum(a['ToT'], 1)
