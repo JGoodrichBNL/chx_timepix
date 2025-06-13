@@ -68,6 +68,16 @@ def centroid_clusters(
 
     return t, xc, yc, ToT_max, ToT_sum, n
 
+TIMESTAMP_VALUE = 1.5625*1e-9 # each raw timestamp is 1.5625 seconds
+MICROSECOND = 1e-6
+
+# We have had decent success with these values, but do not know for sure if they are optimal.
+DEFAULT_CLUSTER_RADIUS = 3
+DEFAULT_CLUSTER_TW_MICROSECONDS = 0.3
+
+DEFAULT_CLUSTER_TW = int(DEFAULT_CLUSTER_TW_MICROSECONDS * MICROSECOND / TIMESTAMP_VALUE)
+
+
 
 @numba.jit(nopython=True, cache=True)
 def cluster_ak(events, radius = DEFAULT_CLUSTER_TW, tw = DEFAULT_CLUSTER_RADIUS):
