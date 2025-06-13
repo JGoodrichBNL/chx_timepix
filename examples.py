@@ -69,4 +69,34 @@ def centroid_clusters(
     return t, xc, yc, ToT_max, ToT_sum, n
 
 
-# events = df[["t", "x", "y", "ToT", "t"]].to_numpy()
+@numba.jit(nopython=True, cache=True)
+def cluster_ak(events, radius = DEFAULT_CLUSTER_TW, tw = DEFAULT_CLUSTER_RADIUS):
+    n = len(events)
+    labels = np.full(n, -1, dtype=np.int64)
+    cluster_id = 0
+
+    max_time = radius * tw  # maximum time difference allowed for clustering
+    radius_sq = radius ** 2
+
+    for i in range(n):
+        if labels[i] == -1:  # if event is unclustered
+            labels[i] = cluster_id
+            for j in range(i + 1, n):  # scan forward only
+                if events[j].t - events[i].t > max_time:  # early exit based on time
+                    break
+                # Compute squared Euclidean distance
+                dx = events[i].x - events[j].x
+                dy = events[i].y - events[j].y
+                dt = events[i].t - events[j].t
+                distance_sq = dx**2 + dy**2 + dt**2
+
+                if distance_sq <= radius_sq:
+                    labels[j] = cluster_id
+            cluster_id += 1
+
+    return labels
+
+
+events = ak.flatten(a)
+labels = cluster_ak(events, 3, 0.5)
+clustered_events = ak.unflatten(events, ak.run_lengths(labels))
