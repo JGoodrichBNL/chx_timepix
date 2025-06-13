@@ -1,4 +1,6 @@
 import awkward as ak
+import numba
+import numpy as np
 import pandas as pd
 import pyarrow as pa
 
