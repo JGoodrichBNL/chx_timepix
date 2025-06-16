@@ -47,4 +47,7 @@ if __name__ == "__main__":
     events = ak.from_arrow(pa.Table.from_pandas(df))
     labels = cluster_ak(events)
     clustered = ak.unflatten(events, ak.run_lengths(labels))
-    clustered.show()
+    # seems we need to do this:
+    sorted_indices = np.argsort(labels)
+    clustered= ak.unflatten(events[sorted_indices], ak.run_lengths(labels[sorted_indices]))
+    print(len(clustered))

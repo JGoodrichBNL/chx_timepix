@@ -7,6 +7,7 @@ version = "0.1.0"
 
 [tasks]
 start = "jupyter lab"
+dask = "dask scheduler"
 
 [dependencies]
 awkward = "*"

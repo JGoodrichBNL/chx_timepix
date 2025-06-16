@@ -109,4 +109,7 @@ def cluster_ak(events, radius = DEFAULT_CLUSTER_TW, tw = DEFAULT_CLUSTER_RADIUS)
 
 events = ak.flatten(a)
 labels = cluster_ak(events, 3, 0.5)
-clustered_events = ak.unflatten(events, ak.run_lengths(labels))
+clustered_events = ak.unflatten(events, ak.run_lengths(labels)) # this doesn't seem to match results
+# seems we need to do this:
+sorted_indices = np.argsort(labels)
+clustered_events = ak.unflatten(events[sorted_indices], ak.run_lengths(labels[sorted_indices]))
